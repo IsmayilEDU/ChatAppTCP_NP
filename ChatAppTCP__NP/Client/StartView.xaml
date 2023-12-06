@@ -1,0 +1,15 @@
+﻿<Window x:Class="Client.StartView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="StartView" Height="350" Width="600" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <!--Name of user-->
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Name of user"  FontSize="30" Margin="10"/>
+        <TextBox x:Name="textbox_NameOfUSer" Margin="20" FontSize="30"/>
+        <Button x:Name="btn_Start" Content="Start" Width="150" Height="80"  Margin="20" Click="btn_Start_Click" FontSize="30"/>
+    </StackPanel>
+</Window>

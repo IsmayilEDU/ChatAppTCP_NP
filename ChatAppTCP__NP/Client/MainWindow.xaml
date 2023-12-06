@@ -1,0 +1,45 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="Chat" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+
+        <!--#region Columns-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition  Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+
+        <!--#region Sent messages-->
+        <StackPanel Grid.Column="0" Margin="0 50">
+
+            <TextBlock Text="{Binding UserName}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Margin="10"/>
+            <!--Name of user-->
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Name of user"  FontSize="20" Margin="10"/>
+            <TextBox x:Name="textbox_NameOfUSer" Margin="10" FontSize="20"/>
+            
+            <!--Message-->
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Message"  FontSize="20"/>
+            <TextBox x:Name="textbox_Message" Margin="10" FontSize="20"/>
+
+            <Button x:Name="btn_Send" Content="Send" Width="100" Height="40"  Margin="10" Click="btn_Send_Click"/>
+        </StackPanel>
+        <!--#endregion-->
+        
+        <!--#region Recieved messages-->
+        <ListView Grid.Column="1" ItemsSource="{Binding MessageHistories}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ReceivedClientName" Width="150" DisplayMemberBinding="{Binding ReceivedClientName}"/>
+                    <GridViewColumn Header="Message" Width="370" DisplayMemberBinding="{Binding Message}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--#endregion-->
+    </Grid>
+</Window>
